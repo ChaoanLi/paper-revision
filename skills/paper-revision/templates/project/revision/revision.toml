@@ -1,0 +1,54 @@
+# paper-revision config. Paths are relative to this file's folder (revision/).
+# Every script also accepts command-line flags, which override these values.
+
+[paper]
+main_tex = "{{MAIN_TEX}}"
+pdf = "{{MAIN_PDF}}"
+# Part of the manuscript the number audit and math audit look at (text markers; the first
+# occurrence counts). Narrow body_end to '\bibliography' or '\appendix' to skip appendices.
+body_start = '{{BODY_START}}'
+body_end = '\end{document}'
+# Git tag of the version the reviewers read (set at intake: git tag submitted-v1 <commit>).
+submitted_tag = "submitted-v1"
+# Journal limits, copied from the journal's own instructions (quote the source in rules.md).
+page_limit = 0          # 0 = no limit known yet
+deadline = ""           # YYYY-MM-DD
+
+[results]
+# CSV files or folders holding every number quoted in the paper.
+paths = []              # e.g. ["../code/<repo>/results"]
+glob = "*.csv"
+exclude = ["quick", "debug"]
+complement = true       # also accept 1 - value (power vs type II error)
+
+[letter]
+tex = "../response/response_letter.tex"
+placeholder = '\PH'     # page/line placeholder macro still to be filled
+
+[style]
+# Optional rules to switch on, default rules to switch off.
+enable = []             # e.g. ["present perfect"]
+disable = []            # e.g. ["digit below 10"]
+max_sentence_words = 40
+main_end = '\appendix'  # lists and footnotes are flagged before this line
+
+[style.rules]
+# Project rules: name = 'regex' (case-insensitive). Terminology, hyphenation, banned phrases.
+# terminology = '\b(field data|real data)\b'
+# hyphenation = '\b(goodness of fit|non-parametric|cross validation)\b'
+
+# Protected text (written by an advisor or coauthor): hits are tagged PROT.
+# [[style.protected]]
+# start = '\begin{abstract}'
+# end = '\end{abstract}'
+
+[anonymize]
+# Used by anonymize_code.py for a double-anonymous code supplement.
+top = "code_supplement"
+# Case-insensitive regexes that must not appear anywhere in the package. E-mail addresses are
+# always checked. Add surnames, institution, repository URLs, arXiv IDs.
+forbidden = ["github\\.com", "arxiv"]
+# [[anonymize.replace]]
+# file = "LICENSE"
+# old = "Copyright (c) 2027 Your Name"
+# new = "Copyright (c) 2027 The authors"

@@ -1,0 +1,85 @@
+% Response to the editor and reviewers.
+% Typography: reviewer text in italics in a quote; our reply after "Response."; new manuscript
+% text in a coloured block. \PH marks a page/line location still to fill (status.py counts them).
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{newtext}{RGB}{0,70,140}
+\newcommand{\PH}{\mbox{\textcolor{red}{[p.~XX, l.~XX]}}\xspace}
+\newcommand{\journal}{Journal Name}
+\newcommand{\msid}{MS-ID}
+\newcommand{\papertitle}{Title of the Paper}
+
+% Reviewer comment: \begin{revcomment}{Reviewer 1, Comment 2} ... \end{revcomment}
+\newenvironment{revcomment}[1]
+  {\par\needspace{6\baselineskip}\medskip\noindent\textbf{#1}\par\nopagebreak
+   \begin{quote}\itshape\small}
+  {\end{quote}}
+% Our reply starts with \response
+\newcommand{\response}{\par\needspace{3\baselineskip}\noindent\textbf{Response.}\ }
+% Quoted new manuscript text, with its location
+\newenvironment{revised}[1]
+  {\par\smallskip\noindent\textit{Revised text (#1):}\par\nopagebreak
+   \begin{quote}\small\color{newtext}}
+  {\end{quote}}
+
+\setlist{itemsep=2pt,topsep=4pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\begin{document}
+
+\begin{center}
+  {\Large Response to the Editor, the Associate Editor, and the Reviewers}\\[4pt]
+  \textit{\papertitle}\quad (\journal, \msid)
+\end{center}
+
+\section*{To the Editor}
+
+We thank the editor, the associate editor and the reviewers for their careful reading. The main
+changes are:
+\begin{enumerate}
+  \item One line per main change, with where it is (Section~3, \PH).
+  \item \dots
+\end{enumerate}
+Below, each comment is quoted in full in italics, followed by our response. New or changed
+manuscript text is quoted in colour with its location in the revised manuscript. Page and line
+numbers refer to the revised manuscript unless stated otherwise.
+
+\hfill The Authors
+
+\section*{Associate Editor}
+
+\begin{revcomment}{AE comment 1}
+The full comment, verbatim.
+\end{revcomment}
+\response The first sentence answers the real concern directly. When the comment asks several
+things, answer each in its own item:
+\begin{enumerate}
+  \item The direct answer first. Then the details:
+  \begin{itemize}
+    \item one point per bullet, with its location (Section~2, \PH).
+  \end{itemize}
+  \item \dots
+\end{enumerate}
+
+\begin{revised}{Section 2, \PH}
+The new manuscript text, exactly as it appears in the revised version.
+\end{revised}
+
+\section*{Reviewer 1}
+
+\begin{revcomment}{Comment 1}
+The full comment, verbatim.
+\end{revcomment}
+\response \dots
+
+\end{document}

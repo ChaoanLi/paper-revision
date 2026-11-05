@@ -1,0 +1,12 @@
+{
+  "name": "paper-revision",
+  "description": "Revise-and-resubmit workflow for LaTeX papers: comment register, ordered plan, one-at-a-time approved proposals, response letter, audits (numbers, math, style, latexdiff), mock re-review, anonymous code package.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Chaoan Li"
+  },
+  "homepage": "https://github.com/ChaoanLi/paper-revision",
+  "repository": "https://github.com/ChaoanLi/paper-revision",
+  "license": "MIT",
+  "keywords": ["academic", "peer-review", "revision", "response-letter", "latex", "rebuttal"]
+}
